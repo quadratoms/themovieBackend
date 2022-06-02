@@ -22,6 +22,9 @@ app.use(serveStatic(path.join(__dirname, 'dist')));
 
 app.use(express.static('public'))
 
+app.get('*', function(req, res){
+   res.redirect('/')
+ });
 // Listen on pc port
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
